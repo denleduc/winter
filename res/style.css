@@ -25,3 +25,9 @@ body {
     border: none;
     border-radius: 5px;
 }
+
+@media screen and (min-width: 1000px) {
+    body {
+        background-size: 100vw auto;
+    }
+}
