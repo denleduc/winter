@@ -14,6 +14,8 @@ See it [live on GitHub Pages](https://bussun.github.io/winter)!
 
 ## Issues
 - On PC, when resizing the window, there is sometimes a white bar at the bottom. I know the reason why but haven't found a solution.
+- Images should really be smaller (filesize)
+- I'll add credits to the resources I used asap
 
 ## Screenshots
 
