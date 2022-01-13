@@ -10,6 +10,7 @@ body {
     background-size: auto 100vh;
     background-repeat: no-repeat;
 
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +27,13 @@ body {
     border-radius: 5px;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (orientation: landscape) { /* Phones landscape */
+    body {
+        background-size: 100vw auto;
+    }
+}
+
+@media screen and (min-width: 1000px) { /* PC */
     body {
         background-size: 100vw auto;
     }
