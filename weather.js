@@ -56,6 +56,7 @@ const UI = (() => {
     const DOMMaxTemp = document.querySelector('.maxTemp');
     const DOMWeather = document.querySelector('.weather');
     const DOMHumidity = document.querySelector('.humidity');
+    const DOMPressure = document.querySelector('.pressure');
     const toggleThemeBtn = document.querySelector('.toggleTheme');
     
     cityInput.addEventListener('keydown', (e) => {
@@ -132,12 +133,17 @@ const UI = (() => {
         DOMMaxTemp.innerText = `Max. temperature: ${convertTemp(weatherObj.maxTemp, currUnit)}°${currUnit}`;
         DOMFeelsLike.innerText = `Feels like: ${convertTemp(weatherObj.feelsLike, currUnit)}°${currUnit}`;
         DOMHumidity.innerText = `Humidity: ${weatherObj.humidity}%`;
+        DOMPressure.innerText = `Pressure: ${weatherObj.pressure} hPa`;
         
     }
 
     function updateTemperature() {
         currUnit = (currUnit == 'C') ? 'F' : 'C';
         DOMTemp.innerText = `${convertTemp(temp, currUnit)}°${currUnit}`;
+        DOMMinTemp.innerText = `Min. temperature: ${convertTemp(minTemp, currUnit)}°${currUnit}`;
+        DOMMaxTemp.innerText = `Max. temperature: ${convertTemp(maxTemp, currUnit)}°${currUnit}`;
+        DOMFeelsLike.innerText = `Feels like: ${convertTemp(feelsLike, currUnit)}°${currUnit}`;
+        
     }
 
     function changeTheme() {
