@@ -12,8 +12,10 @@ body {
 
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 25px;
 }
 
 p {
@@ -31,7 +33,8 @@ p {
     border-radius: 5px;
 }
 
-.weatherDisplay {
+.weatherDisplay,
+.otherInfo {
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 5px;
@@ -55,11 +58,13 @@ p {
 @media screen and (orientation: landscape) { /* Phones landscape */
     body {
         background-size: 100vw auto;
+        flex-direction: row;
     }
 }
 
 @media screen and (min-width: 1000px) { /* PC */
     body {
         background-size: 100vw auto;
+        flex-direction: row;
     }
 }
