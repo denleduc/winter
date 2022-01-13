@@ -39,21 +39,49 @@ const weather = (() => {
 })();
 
 const UI = (() => {
+    let currUnit = 'C';
+    let temp;
     const cityInput = document.querySelector('#cityInput');
+    const DOMTemp = document.querySelector('.temperature');
+    const DOMCityName = document.querySelector('.cityName');
+    const DOMWeatherIcon = document.querySelector('.weatherIcon');
+    const DOMWeather = document.querySelector('.weather');
+    const DOMWDescription = document.querySelector('.description');
+    
     cityInput.addEventListener('keydown', (e) => {
-        if (e.key == 'Enter'){
+    if (e.key == 'Enter'){
             console.log('Pressed enter');
             getWeather(cityInput.value);
         }
     });
 
+    DOMTemp.addEventListener('click', updateTemperature);
+
     function getWeather(name) {
         weather.fetchWeather(name);
     }
 
-    function updateScreen(weatherObj) {
-        console.log(weatherObj);
+    function convertTemp(temp, unit) { //From Kelvin to given unit: celcius or fahrenheit
+        if (unit == 'C') {
+            return Number.parseFloat(temp - 273.15).toFixed(2);
+        }
+        else {
+            return Number.parseFloat((temp - 273.15) * 1.8 + 32).toFixed(2);
+        }
     }
 
-    return {updateScreen};
+    function updateScreen(weatherObj) {
+        DOMCityName.innerText = weatherObj.city;
+        DOMTemp.innerText = `${convertTemp(weatherObj.temperature, currUnit)}°${currUnit}`;
+        temp = weatherObj.temperature;
+        DOMWeather.innerText = weatherObj.weather;
+        DOMWDescription.innerText = weatherObj.desc;
+    }
+
+    function updateTemperature() {
+        currUnit = (currUnit == 'C') ? 'F' : 'C';
+        DOMTemp.innerText = `${convertTemp(temp, currUnit)}°${currUnit}`;
+    }
+
+    return {updateScreen, updateTemperature};
 })();

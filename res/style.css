@@ -16,6 +16,10 @@ body {
     align-items: center;
 }
 
+p {
+    margin: 0;
+}
+
 #cityInput {
     position: absolute;
     top: 15px;
@@ -25,6 +29,27 @@ body {
     background-color: rgba(255, 255, 255, 0.85);
     border: none;
     border-radius: 5px;
+}
+
+.weatherDisplay {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+}
+
+.cityName {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.tempIcon {
+    display: flex;
+    gap: 10px;
+}
+
+.temperature {
+    font-size: 3em;
+    font-weight: 500;
 }
 
 @media screen and (orientation: landscape) { /* Phones landscape */
