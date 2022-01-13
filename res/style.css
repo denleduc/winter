@@ -55,6 +55,35 @@ p {
     font-weight: 500;
 }
 
+.toggleTheme,
+.about {
+    position: absolute;
+    bottom: 10px;
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.toggleTheme {
+    left: 10px;
+    background-image: url('./img/moon.svg');
+}
+
+.about {
+    right: 10px;
+    font-size: 1.1em;
+    color: gray;
+}
+
+.dark {
+    background-color: rgba(0, 0, 0, 0.75) !important;
+    color: rgb(220,220,220);
+}
+
 @media screen and (orientation: landscape) { /* Phones landscape */
     body {
         background-size: 100vw auto;

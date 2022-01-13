@@ -8,24 +8,25 @@
     <title>Winter</title>
 </head>
 <body>
-    <input type="text" name="cityInput" id="cityInput" placeholder="Type your city">
+    <input type="text" name="cityInput" id="cityInput" placeholder="Type your city" class="themeable">
 
-    <div class="weatherDisplay">
+    <div class="weatherDisplay themeable">
         <p class="cityName">City name</p>
         <div class="tempIcon">
             <p class="temperature">Temp</p>
-            <img src="#" alt="weather icon" class="weatherIcon">
         </div>
         <p class="weather">Weather</p>
-        <p class="description">Description</p>
     </div>
 
-    <div class="otherInfo">
+    <div class="otherInfo themeable">
         <p class="feelsLike">Feels like: </p>
         <p class="humidity">Humidity: </p>
         <p class="minTemp">Min. temperature: </p>
         <p class="maxTemp">Max. temperature: </p>
     </div>
+
+    <button class="toggleTheme"></button>
+    <button class="about themeable">?</button>
     <script src="weather.js" defer></script>
 </body>
 </html>

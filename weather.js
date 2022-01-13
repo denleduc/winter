@@ -42,18 +42,21 @@ const weather = (() => {
 })();
 
 const UI = (() => {
+    let currentTheme = 'light';
     let currUnit = 'C';
     let temp;
     let minTemp;
     let maxTemp;
+    let feelsLike;
     const cityInput = document.querySelector('#cityInput');
-    const DOMTemp = document.querySelector('.temperature');
     const DOMCityName = document.querySelector('.cityName');
-    const DOMWeatherIcon = document.querySelector('.weatherIcon');
-    const DOMWeather = document.querySelector('.weather');
-    const DOMWDescription = document.querySelector('.description');
+    const DOMTemp = document.querySelector('.temperature');
     const DOMFeelsLike = document.querySelector('.feelsLike');
+    const DOMMinTemp = document.querySelector('.minTemp');
+    const DOMMaxTemp = document.querySelector('.maxTemp');
+    const DOMWeather = document.querySelector('.weather');
     const DOMHumidity = document.querySelector('.humidity');
+    const toggleThemeBtn = document.querySelector('.toggleTheme');
     
     cityInput.addEventListener('keydown', (e) => {
     if (e.key == 'Enter'){
@@ -63,6 +66,7 @@ const UI = (() => {
     });
 
     DOMTemp.addEventListener('click', updateTemperature);
+    toggleThemeBtn.addEventListener('click', changeTheme);
 
     function getWeather(name) {
         weather.fetchWeather(name);
@@ -81,6 +85,9 @@ const UI = (() => {
         DOMCityName.innerText = weatherObj.city;
         DOMTemp.innerText = `${convertTemp(weatherObj.temperature, currUnit)}°${currUnit}`;
         temp = weatherObj.temperature;
+        minTemp = weatherObj.minTemp;
+        maxTemp = weatherObj.maxTemp;
+        feelsLike = weatherObj.feelsLike;
         DOMWeather.innerText = weatherObj.weather;
         switch (weatherObj.weather) {
             case 'Clear':
@@ -121,12 +128,33 @@ const UI = (() => {
                 document.body.style.backgroundImage = `url('./res/img/clear_night.jpg')`;
                 break;
         }
-        DOMWDescription.innerText = weatherObj.desc;
+        DOMMinTemp.innerText = `Min. temperature: ${convertTemp(weatherObj.minTemp, currUnit)}°${currUnit}`;
+        DOMMaxTemp.innerText = `Max. temperature: ${convertTemp(weatherObj.maxTemp, currUnit)}°${currUnit}`;
+        DOMFeelsLike.innerText = `Feels like: ${convertTemp(weatherObj.feelsLike, currUnit)}°${currUnit}`;
+        DOMHumidity.innerText = `Humidity: ${weatherObj.humidity}%`;
+        
     }
 
     function updateTemperature() {
         currUnit = (currUnit == 'C') ? 'F' : 'C';
         DOMTemp.innerText = `${convertTemp(temp, currUnit)}°${currUnit}`;
+    }
+
+    function changeTheme() {
+        console.log('tapped!')
+        const themableElements = document.querySelectorAll('.themeable');
+        if (currentTheme == 'light') {
+            currentTheme = 'dark';
+            themableElements.forEach(el => {
+                el.classList.add('dark');
+            });
+        }
+        else {
+            currentTheme = 'light';
+            themableElements.forEach(el => {
+                el.classList.remove('dark');
+            });
+        }
     }
 
     return {updateScreen, updateTemperature, getWeather};
