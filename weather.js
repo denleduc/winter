@@ -93,6 +93,37 @@ const UI = (() => {
         maxTemp = weatherObj.maxTemp;
         feelsLike = weatherObj.feelsLike;
         DOMWeather.innerText = weatherObj.weather;
+        document.body.className = "";
+        switch (weatherObj.weather) {
+            case 'Clear':
+                document.body.classList.add('clear');
+                break;
+            case 'Snow':
+                document.body.classList.add('snow');
+                break;
+            case 'Rain':
+                document.body.classList.add('rain');
+                break;
+            case 'Drizzle':
+            case 'Clouds':
+                document.body.classList.add('drizzle');
+                break;
+            case 'Thunderstorm':
+                document.body.classList.add('thunderstorm');
+                break;
+            case 'Mist':
+            case 'Fog':
+                document.body.classList.add('mist');
+                break;
+            case 'Sand':
+                document.body.classList.add('sand');
+                break;
+            case 'Tornado':
+                document.body.classList.add('tornado');
+                break;
+            default:
+                break;
+        }
         DOMMinTemp.innerText = `Min. temperature: ${convertTemp(weatherObj.minTemp, currUnit)}°${currUnit}`;
         DOMMaxTemp.innerText = `Max. temperature: ${convertTemp(weatherObj.maxTemp, currUnit)}°${currUnit}`;
         DOMFeelsLike.innerText = `Feels like: ${convertTemp(weatherObj.feelsLike, currUnit)}°${currUnit}`;

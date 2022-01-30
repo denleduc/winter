@@ -6,15 +6,14 @@ Some info (no particular order):
 
 - It is fully responsive! (It's the first project I designed 'mobile-first')
 - You can (if you tap/click on the main temperature) see the temperature in both Celsius and Fahrenheit!
-- The background changes accordingly to the weather (not all weathers are supported, if not supported, it'll default to a starry sky). [NOT ANYMORE, IT WILL BE REPLACED]
+- The background changes according to the weather
 - Simple UI
 - Dark mode
 
 See it [live on GitHub Pages](https://bussun.github.io/winter)!
 
 ## Issues
-- On PC, when resizing the window, there is sometimes a white bar at the bottom. I know why but haven't found a solution.
-- Images should really be smaller (filesize)
+
 - I'll add credits to the resources I used asap
 
 ## Features to come:
