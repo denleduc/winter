@@ -74,6 +74,10 @@ p {
     background-image: url('./img/moon.svg');
 }
 
+.toggleTheme.dark {
+    background-image: url('./img/white_moon.svg');
+}
+
 .about {
     right: 10px;
     font-size: 1.1em;
@@ -104,6 +108,8 @@ p {
 @supports (backdrop-filter: blur(10px)) {
     .aboutModal {
         backdrop-filter: blur(10px);
+        color: white;
+        text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
     }
 }
 
