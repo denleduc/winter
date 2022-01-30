@@ -93,45 +93,6 @@ const UI = (() => {
         maxTemp = weatherObj.maxTemp;
         feelsLike = weatherObj.feelsLike;
         DOMWeather.innerText = weatherObj.weather;
-        /*switch (weatherObj.weather) {
-            case 'Clear':
-                document.body.style.backgroundImage = `url('./res/img/clear_day.jpg')`;
-                break;
-
-            case 'Snow':
-                document.body.style.backgroundImage = `url('./res/img/snow.jpg')`;
-                break;
-
-            case 'Rain':
-                document.body.style.backgroundImage = `url('./res/img/rain.jpg')`;
-                break;
-
-            case 'Drizzle':
-            case 'Clouds':
-                document.body.style.backgroundImage = `url('./res/img/cloudy.jpg')`;
-                break;
-
-            case 'Thunderstorm':
-                document.body.style.backgroundImage = `url('./res/img/thunder.jpg)`;
-                break;
-
-            case 'Mist':
-            case 'Fog':
-                document.body.style.backgroundImage = `url('./res/img/mist.jpg')`;
-                break;
-
-            case 'Sand':
-                document.body.style.backgroundImage = `url('./res/img/sandstorm.jpg')`;
-                break;
-
-            case 'Tornado':
-                document.body.style.backgroundImage = `url('./res/img/tornado.jpg')`;
-                break;
-
-            default:
-                document.body.style.backgroundImage = `url('./res/img/clear_night.jpg')`;
-                break;
-        }*/
         DOMMinTemp.innerText = `Min. temperature: ${convertTemp(weatherObj.minTemp, currUnit)}°${currUnit}`;
         DOMMaxTemp.innerText = `Max. temperature: ${convertTemp(weatherObj.maxTemp, currUnit)}°${currUnit}`;
         DOMFeelsLike.innerText = `Feels like: ${convertTemp(weatherObj.feelsLike, currUnit)}°${currUnit}`;
