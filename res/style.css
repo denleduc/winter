@@ -85,7 +85,6 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    backdrop-filter: blur(10px);
     width: 300px;
     height: 300px;
     z-index: 2;
@@ -100,6 +99,18 @@ p {
 
 .invisible {
     display: none;
+}
+
+@supports (backdrop-filter: blur(10px)) {
+    .aboutModal {
+        backdrop-filter: blur(10px);
+    }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+    .aboutModal {
+        background-color: rgba(255, 255, 255, 0.85);
+    }
 }
 
 @media screen and (orientation: landscape) { /* Phones landscape */
