@@ -63,7 +63,7 @@ const UI = (() => {
     
     cityInput.addEventListener('keydown', (e) => {
     if (e.key == 'Enter'){
-            console.log('Pressed enter');
+            document.body.style.cursor = "wait";
             getWeather(cityInput.value);
         }
     });
@@ -129,7 +129,7 @@ const UI = (() => {
         DOMFeelsLike.innerText = `Feels like: ${convertTemp(weatherObj.feelsLike, currUnit)}°${currUnit}`;
         DOMHumidity.innerText = `Humidity: ${weatherObj.humidity}%`;
         DOMPressure.innerText = `Pressure: ${weatherObj.pressure} hPa`;
-        
+        document.body.style.cursor = "default";
     }
 
     function updateTemperature() {
