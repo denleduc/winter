@@ -8,6 +8,7 @@ body {
     margin: 0;
     background-image: url(./img/clear_night.jpg);
     background-size: auto 100vh;
+    background: linear-gradient(27deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 33%, rgba(0,212,255,1) 100%); 
     background-repeat: no-repeat;
 
     min-height: 100vh;
@@ -79,9 +80,26 @@ p {
     color: gray;
 }
 
+.aboutModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(10px);
+    width: 300px;
+    height: 300px;
+    z-index: 2;
+    padding: 1rem;
+    box-shadow: 5px 5px 25px 1px #000000;
+}
+
 .dark {
     background-color: rgba(0, 0, 0, 0.75) !important;
     color: rgb(220,220,220);
+}
+
+.invisible {
+    display: none;
 }
 
 @media screen and (orientation: landscape) { /* Phones landscape */

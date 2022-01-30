@@ -58,6 +58,8 @@ const UI = (() => {
     const DOMHumidity = document.querySelector('.humidity');
     const DOMPressure = document.querySelector('.pressure');
     const toggleThemeBtn = document.querySelector('.toggleTheme');
+    const aboutBtn = document.querySelector('.about');
+    const aboutModal = document.querySelector('.aboutModal');
     
     cityInput.addEventListener('keydown', (e) => {
     if (e.key == 'Enter'){
@@ -68,6 +70,7 @@ const UI = (() => {
 
     DOMTemp.addEventListener('click', updateTemperature);
     toggleThemeBtn.addEventListener('click', changeTheme);
+    aboutBtn.addEventListener('click', toggleAboutModal);
 
     function getWeather(name) {
         weather.fetchWeather(name);
@@ -90,7 +93,7 @@ const UI = (() => {
         maxTemp = weatherObj.maxTemp;
         feelsLike = weatherObj.feelsLike;
         DOMWeather.innerText = weatherObj.weather;
-        switch (weatherObj.weather) {
+        /*switch (weatherObj.weather) {
             case 'Clear':
                 document.body.style.backgroundImage = `url('./res/img/clear_day.jpg')`;
                 break;
@@ -128,7 +131,7 @@ const UI = (() => {
             default:
                 document.body.style.backgroundImage = `url('./res/img/clear_night.jpg')`;
                 break;
-        }
+        }*/
         DOMMinTemp.innerText = `Min. temperature: ${convertTemp(weatherObj.minTemp, currUnit)}°${currUnit}`;
         DOMMaxTemp.innerText = `Max. temperature: ${convertTemp(weatherObj.maxTemp, currUnit)}°${currUnit}`;
         DOMFeelsLike.innerText = `Feels like: ${convertTemp(weatherObj.feelsLike, currUnit)}°${currUnit}`;
@@ -161,6 +164,10 @@ const UI = (() => {
                 el.classList.remove('dark');
             });
         }
+    }
+
+    function toggleAboutModal() {
+        aboutModal.classList.toggle('invisible');
     }
 
     return {updateScreen, updateTemperature, getWeather};
