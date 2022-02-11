@@ -10,17 +10,17 @@ Some info (no particular order):
 - Simple UI
 - Dark mode
 
-See it [live on GitHub Pages](https://bussun.github.io/winter)!
+See it [live on my website](https://bussun.dev/projects/winter)!
 
 ## Issues
 
 - I'll add credits to the resources I used asap
 
 ## Features to come:
-- Images will be replaced by a linear gradient adjusting according to the weather
+- Replacing absolute units in my CSS
 
 ## Screenshots
-
+(To be updated)
 ![PC screenshot with dark mode and celsius](./res/readme_res/screenshot.png)
 ![Mobile screenshot with light mode and fahrenheit](./res/readme_res/mobile_screenshot1.png)
 ![Mobile screenshot with dark mode and celsius](./res/readme_res/mobile_screenshot2.png)
