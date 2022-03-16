@@ -1,6 +1,7 @@
 # Winter (I like snow, that's why)
  A simple weather app fetching its data from OpenWeatherMap's API. It has been created while following The Odin Project. Its purpose was to manipulate asynchronous JavaScript and fetch data from an API.
 
+!!! It doesn't work anymore, the API key is now invalid.
 
 Some info (no particular order):
 
