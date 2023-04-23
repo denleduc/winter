@@ -15,6 +15,10 @@ body {
     gap: 25px;
 }
 
+.darkBody {
+    backdrop-filter: brightness(0.5)
+}
+
 body.clear {
     background: linear-gradient(165deg, rgba(236,255,0,1) 0%, rgba(42,206,245,1) 35%, rgba(0,44,255,1) 100%);
 }
