@@ -175,6 +175,7 @@ const UI = (() => {
     feelsLike = weatherObj.feelsLike;
     DOMWeather.innerText = weatherObj.weather;
     document.body.className = "";
+    if (currentTheme === 'dark') {document.body.classList.add('darkBody');}
     switch (weatherObj.weather) {
       case "Clear":
         document.body.classList.add("clear");
@@ -275,4 +276,4 @@ const UI = (() => {
 })();
 
 UI.setTheme();
-UI.getWeather();
+//UI.getWeather();

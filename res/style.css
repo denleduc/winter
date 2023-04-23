@@ -87,6 +87,7 @@ p {
 }
 
 .toggleTheme,
+.toggleLanguage,
 .about {
     position: absolute;
     bottom: 10px;
@@ -112,6 +113,10 @@ p {
     right: 10px;
     font-size: 1.1em;
     color: gray;
+}
+
+.toggleLanguage {
+    left: 50px;
 }
 
 .aboutModal {
