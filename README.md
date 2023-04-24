@@ -9,15 +9,16 @@ Some info (in no particular order):
 - Simple UI
 - Dark mode
 - Preferences are stored in localStorage
+- UI can be set in both French and English
 
-See it [live on my website](https://bussun.dev/projects/winter)! (broken link that should work again soon enough)
+See it [live on the GitHub pages deployment](https://bussun.github.io/winter)!
 
 ## Issues
 
 - None than I can think of (feel free to open an issue if you happen to find one).
 
 ## Features to come:
-- Replacing absolute units in my CSS
+- None for now.
 
 ## Screenshots
 (***To be updated***)
